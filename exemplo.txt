@@ -1,0 +1,17 @@
+Objetivo:
+   Crar uma api restfull para controle de produtos
+
+
+Modelo: ok
+    Produto: id, nome, quantidade, valor, observacao
+
+Repositorio de produto:ok
+    obterTodos, obterPorId, cadastrar, atualizar,remover
+
+Serviço de produto
+    obterTodos, obterPorId, cadastrar, atualizar,remover
+
+controller:
+    GET: /produto   /produto/{id}
+    PUT: /produto
+    POST: /produto
