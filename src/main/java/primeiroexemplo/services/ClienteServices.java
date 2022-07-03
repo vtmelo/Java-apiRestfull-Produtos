@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import primeiroexemplo.model.Cliente;
 import primeiroexemplo.repository.ClienteRepository;
 
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,7 +32,6 @@ public class ClienteServices {
     }
 
     public Cliente atualizar(String cpf, Cliente cliente){
-
        cliente.setCpf(cpf);
        return clienteRepository.atualizar(cliente);
     }
