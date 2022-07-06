@@ -2,6 +2,7 @@ package primeiroexemplo.repository;
 
 import org.springframework.stereotype.Repository;
 import primeiroexemplo.model.Produto;
+import primeiroexemplo.model.exception.ResourceNotFoundException;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -66,7 +67,7 @@ public class ProdutoRepository {
        Optional<Produto> produtoEncontrado = obterPorID(produto.getId());
 
        if(!produtoEncontrado.isPresent()){
-           throw new InputMismatchException("Produto nao encontrado");
+           throw new ResourceNotFoundException("Produto não encontrado");
        }
        deletar(produto.getId());
 

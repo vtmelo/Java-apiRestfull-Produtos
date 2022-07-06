@@ -2,9 +2,9 @@ package primeiroexemplo.repository;
 
 import org.springframework.stereotype.Repository;
 import primeiroexemplo.model.Cliente;
+import primeiroexemplo.model.exception.ResourceNotFoundException;
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,7 +34,7 @@ public class ClienteRepository {
 
         Optional<Cliente> clienteEncontrado =obterPorCpf(cliente.getCpf());
         if(!clienteEncontrado.isPresent()){
-            throw new InputMismatchException("Cliente nao encontrado");
+            throw new ResourceNotFoundException("Cliente nao encontrado");
         }
         removerCliente(cliente.getCpf());
         adicionarCliente(cliente);
